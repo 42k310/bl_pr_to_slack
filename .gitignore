@@ -1,0 +1,16 @@
+/certifi-2019.3.9.dist-info
+/chardet
+/urllib3
+/slackweb-1.0.5-py3.6.egg-info
+/slackweb
+/requests-2.21.0.dist-info
+/requests
+/idna-2.8.dist-info
+/idna
+/chardet-3.0.4.dist-info
+/certifi
+/.vscode
+/__pycache__
+/urllib3-1.24.3.dist-info
+
+const_module.py
