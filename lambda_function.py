@@ -5,6 +5,8 @@ import const_module
 from datetime import datetime, date, timedelta
 from pull_request import PullRequest
 
+# FIXME: Lambdaに上げるときは、メソッドを定義する
+# def lambda_handler(event, context):
 work_arrs = []
 work_arrs_yesterday = []
 params = {
@@ -78,7 +80,8 @@ for work_arr_yes in work_arrs_yesterday:
 for work_arr in work_arrs:
     for tgt in work_arr:
         post_arr.append(tgt)
-post_text = today_str + '\n' + '```🎯昨日、新しく追加されたプルリクエスト' + '\n'.join(
-    post_arr_yesterday) + '```' + '\n' + '```📝累積プルリクエスト' + '\n'.join(
-        post_arr) + '```'
+post_text = today_str + '\n' + '```🎯昨日、新しく追加されたプルリクエスト：' + str(
+    len(post_arr_yesterday)) + '件' + '\n'.join(
+        post_arr_yesterday) + '```' + '\n' + '```📝累積プルリクエスト：' + str(
+            len(post_arr)) + '件' + '\n'.join(post_arr) + '```'
 slack.notify(text=post_text)
