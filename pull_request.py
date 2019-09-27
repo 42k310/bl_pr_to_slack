@@ -23,8 +23,8 @@ class PullRequest:
         arr = []
         if len(self.prs) > 0:
             for pr in self.prs:
-                created = datetime.strptime(pr['created'][0:10], '%Y-%m-%d')
-                if created.date() == yesterday_datetime.date():
+                updated = datetime.strptime(pr['updated'][0:10], '%Y-%m-%d')
+                if updated.date() == yesterday_datetime.date():
                     text = '\n' + str(pr['summary']) + '\n' + pr_url + str(
                         pr['number'])
                     arr.append(text)
